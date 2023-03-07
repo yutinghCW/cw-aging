@@ -3,25 +3,35 @@ $h-size: $h1, $h2, $h3, $h4, $h5, $h6;
 $h-m-size: $h1-m, $h2-m, $h3-m, $h4-m, $h5-m, $h6-m;
 
 strong, b {
+  @extend %typo-weight;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
     @extend %typo-weight;
+  }
+  h#{$i},
+  .h#{$i} {
+    @extend %typo-margin;
+  }
 }
 
 @for $i from 1 through 6 {
-    h#{$i} {
-        @extend %typo-weight;
+  h#{$i},
+  .h#{$i} {
+    font-size: nth($h-m-size, $i);
+    @include media-breakpoint-up(sm) {
+      font-size: nth($h-size, $i);
     }
-    h#{$i},
-    .h#{$i} {
-        @extend %typo-margin;
-    }
+  }
 }
 
-@for $i from 1 through 6 {
-    h#{$i},
-    .h#{$i} {
-        font-size: nth($h-m-size, $i);
-        @include media-breakpoint-up(sm) {
-            font-size: nth($h-size, $i);
-        }
-    }
+.line-height-140 {
+  line-height: 1.4;
+}
+.line-height-160 {
+  line-height: 1.6;
+}
+.line-height-180 {
+  line-height: 1.8;
 }

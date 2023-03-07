@@ -28,7 +28,8 @@ body {
   display: flex;
   flex-direction: column;
   font-family: 'Roboto', 'Noto Sans TC', sans-serif;
-  line-height: 1.5;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
   &.opened {
     overflow: hidden;
   }

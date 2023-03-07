@@ -40,28 +40,3 @@ a.logo {
     }
   }
 }
-
-.form-search {
-  position: relative;
-  width: 300px;
-  input {
-    width: 300px * $zoomin;
-    padding: .6rem * $zoomin .5rem * $zoomin .4rem * $zoomin .75rem * $zoomin;
-    border: 1px solid $black;
-    border-radius: 30px;
-    transform: scale($zoomout);
-    transform-origin: left center;
-  }
-  button {
-    position: absolute;
-    top: 50%;
-    right: .5rem;
-    padding: (1.25rem - .875rem) / 2;
-    border: 0;
-    transform: translateY(-50%);
-  }
-  i {
-    display: block;
-    font-size: .875rem;
-  }
-}

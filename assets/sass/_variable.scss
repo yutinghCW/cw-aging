@@ -4,7 +4,7 @@ $enable-important-utilities:  true !default;
 
 // 欄位設定
 $grid-columns:        12 !default;
-$grid-gutter-width:   2.5rem !default;
+$grid-gutter-width:   2.25rem !default;
 $container-padding-x: $grid-gutter-width * .5 !default;
 
 // breakpoint
@@ -21,7 +21,7 @@ $container-max-widths: (
   xs: 100%,
   sm: 100%,
   md: 960px,
-  lg: 1200px
+  lg: 1300px
 ) !default;
 
 // 間距設定
@@ -38,19 +38,21 @@ $spacers: (
 // ---------------------------------------------------------
 
 // header text 設定
-$h1:    $spacer * 32; //32px
-$h2:    $spacer * 22; //22px
-$h3:    $spacer * 18; //18px
-$h4:    $spacer * 16; //16px
-$h5:    $spacer * 14; //14px
-$h6:    $spacer * 12; //12px
+$h1:    $spacer * 36; //36px
+$h2:    $spacer * 30; //30px
+$h3:    $spacer * 24; //24px
+$h4:    $spacer * 22; //22px
+$h5:    $spacer * 16; //16px
+$h6:    $spacer * 14; //14px
+$h7:    $spacer * 12; //12px
 
-$h1-m:  $spacer * 28; //28px
+$h1-m:  $spacer * 24; //24px
 $h2-m:  $spacer * 20; //20px
 $h3-m:  $spacer * 18; //18px
-$h4-m:  $spacer * 16; //16px
-$h5-m:  $spacer * 14; //14px
-$h6-m:  $spacer * 12; //12px
+$h4-m:  $spacer * 18; //18px
+$h5-m:  $spacer * 16; //16px
+$h6-m:  $spacer * 14; //14px
+$h7-m:  $spacer * 12; //12px
 
 // ---------------------------------------------------------
 
@@ -65,7 +67,7 @@ $gray-600:         #394148 !default; //dark
 // 無彩色色碼
 $white:           #ffffff !default; //background
 $gray:            #fafafa !default;
-$black:           #171717 !default;
+$black:           #000000 !default;
 $dark:              $gray-600 !default;
 
 // 語易化色碼
@@ -84,6 +86,16 @@ $rss:             #ff5700 !default;
 $twitter:         #00acee !default;
 $whatapp:         #4fce5d !default;
 $mail:              $primary !default;
+
+// 灰色階色碼 map
+$grays: () !default;
+$grays: map-merge((
+  "100": ($gray, $black),
+  "200": ($gray-100, $black),
+  "300": ($gray-200, $black),
+  "400": ($gray-300, $white),
+  "500": ($gray-500, $white)
+), $grays);
 
 // 無彩色色碼 map
 $bks: () !default;
