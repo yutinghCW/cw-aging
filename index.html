@@ -4,15 +4,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>銀天下策展平台</title>
+  <link rel="shortcut icon" href="https://www.cw.com.tw/images/common/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="assets/css/feature.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
 </head>
 <body>
   <header class="px-30">
-    <div class="container-fluid d-flex flex-wrap gap-20 px-0 py-20">
+    <div class="container-fluid d-flex flex-wrap align-items-center gap-20 px-0 py-20">
       <a href="index.html" class="logo">
         <img src="assets/images/aging-logo.svg" alt="銀天下 Logo">
       </a>
+      <button type="button" class="open-search ms-auto">
+        <i class="icon-search"></i>
+      </button>
       <form class="form-search ms-auto">
         <input type="text" placeholder="請輸入關鍵字" name="search">
         <button type="submit">
@@ -22,10 +27,41 @@
       <div class="member-block">
         <button type="button" class="btn icon-user"></button>
       </div>
+      <button type="button" class="hamburger">
+        <span></span><span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <main>
+  <section class="opening-module">
+    <div class="slick-opening">
+      <div>
+        <div class="ratio">
+          <img src="https://picsum.photos/1920/1080" lazy class="landscape" alt="kv模組">
+          <img src="https://picsum.photos/828/1236" lazy class="portrait" alt="kv模組">
+        </div>
+      </div>
+      <div>
+        <div class="ratio">
+          <img src="https://picsum.photos/1920/1080" lazy class="landscape" alt="kv模組">
+          <img src="https://picsum.photos/828/1236" lazy class="portrait" alt="kv模組">
+        </div>
+      </div>
+      <div>
+        <div class="ratio">
+          <img src="https://picsum.photos/1920/1080" lazy class="landscape" alt="kv模組">
+          <img src="https://picsum.photos/828/1236" lazy class="portrait" alt="kv模組">
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid d-flex flex-wrap">
+      <i class="icon-star ms-auto"></i>
+      <h1 class="my-10">策展主標題</h1>
+      <p class="h4 my-0">抱飛把昌風且斤尼怪完抱飛把昌風且斤尼怪完抱飛把昌風且斤尼怪完抱飛把昌風且斤尼怪完抱飛把昌風且斤尼怪完</p>
+    </div>
+  </section>
+
+  <article>
     <section class="preface-module">
       <div class="container">
         <!-- 前言模組 -->
@@ -158,7 +194,7 @@
         </div>
       </div>
     </section>
-    <section>
+    <section class="slideshow-module">
       <div class="container">
         <!-- 照片slideshow模組 -->
         <h2 class="title-with-icon mt-0 mb-md-40 mb-20">照片slideshow模組</h2>
@@ -166,6 +202,22 @@
           <p class="text-gray-500 line-height-180 mt-0 mb-md-30 mb-20">
             共各物念昔吉半給可林往往采第。午百許、那卜三日親歌方屋竹犬習樹流止怪結掃！安躲爪斤哥話水游鴨樹面走怎共前姊。肉葉行壯大老安良八中條見呢入頁，真玩北但珠過打泉爬根不，新女各起！共松學秋室布呢巾女，頭兔里直是幫手送好畫行良毛哥小！過看化魚放朵來耍几錯世就圓只木個員房跟；我服休師中花飯，辛珠語巾。者申秋入姊戊免事登。院平時玉蝶昔亭汗光西香女。但到神歡新，弟話四完幫行冒植、現相給字玩飯比和兆布鳥娘足往自。
           </p>
+          <div class="slick-gallery">
+            <div>
+              <div class="d-flex">
+                <div class="col-img">
+                  <div class="ratio ratio-25by17">
+                    <img src="https://picsum.photos/1600/1072" lazy width="100%" alt="照片slideshow模組">
+                  </div>
+                </div>
+                <div class="col-text my-0">
+                  <h3 class="my-0">
+                    抱飛把昌風且斤尼怪完抱飛把昌風且斤尼怪完抱飛把昌風且斤尼怪完抱飛把昌風且斤尼怪完抱飛把昌風且斤尼怪完
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -326,7 +378,7 @@
         </div>
       </div>
     </section>
-  </main>
+  </article>
 
   <footer>
     <div class="container-fluid d-flex flex-wrap justify-content-between gap-20">
@@ -356,6 +408,11 @@
       </div>
     </div>
   </footer>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.4.1/jquery-migrate.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+  <script src="assets/js/feature.js"></script>
 </body>
 
 </html>

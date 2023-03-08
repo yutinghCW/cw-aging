@@ -1,7 +1,8 @@
 $hamburger: (
-  width: 20px,
-  unit:  3px,
-  gap:   4px
+  width1: 20px,
+  width2: 16px,
+  unit:  2px,
+  gap:   3px
 );
 
 .hamburger {
@@ -9,10 +10,8 @@ $hamburger: (
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: map-get($hamburger, width);
-  height: map-get($hamburger, width);
-  padding: 0;
-  align-self: auto;
+  align-items: flex-end;
+  padding: 5px;
   border: 0;
   background-color: transparent;
   cursor: pointer;
@@ -29,17 +28,19 @@ $hamburger: (
   }
   span {
     display: block;
-    width: map-get($hamburger, width);
     height: map-get($hamburger, unit);
-    background-color: $gray-500;
+    background-color: $black;
+    border-radius: map-get($hamburger, unit);
+    &:nth-child(even) {
+      width: map-get($hamburger, width2);
+    }
+    &:nth-child(odd) {
+      width: map-get($hamburger, width1);
+    }
     + span {
       margin-top: map-get($hamburger, gap);
     }
     @at-root {
-      .active#{&},
-      :hover#{&} {
-        background-color: $black;
-      }
       .opened#{&} {
         margin-top: 0;
         height: 2px;

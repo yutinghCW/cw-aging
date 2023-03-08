@@ -1,7 +1,18 @@
+.open-search {
+  padding: 5px;
+  border: 0;
+  i {
+    display: block;
+  }
+}
+
 .form-search {
   display: none;
   position: relative;
   width: 300px;
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
   input {
     width: 300px * $zoomin;
     padding: .6rem * $zoomin .5rem * $zoomin .4rem * $zoomin .75rem * $zoomin;

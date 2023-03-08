@@ -376,11 +376,6 @@ strong, b, h1, h2, h3, h4, h5, h6 {
   outline: 0;
 }
 
-html, body {
-  height: 100%;
-  min-height: 100%;
-}
-
 html {
   font-family: -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Helvetica Neue, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -3566,6 +3561,37 @@ h6,
   border-color: #12F99F;
 }
 
+.slick-gallery .col-img {
+  position: relative;
+  width: 625px;
+  padding-bottom: 5px;
+  margin-right: -90px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.slick-gallery .ratio {
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 0 #00D180;
+          box-shadow: 5px 5px 0 #00D180;
+}
+
+.slick-gallery .col-text {
+  width: 625px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
+.slick-gallery .col-text h3 {
+  padding: 30px 48px 98px 128px;
+  font-size: 1.125rem;
+  border-radius: 10px;
+  border: 1px solid #00D180;
+  -webkit-box-shadow: 5px 5px 0 #00D180;
+          box-shadow: 5px 5px 0 #00D180;
+}
+
 @font-face {
   font-family: "aging";
   src: url("../fonts/aging.eot?wnxo21");
@@ -3637,11 +3663,10 @@ h6,
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 20px;
-  height: 20px;
-  padding: 0;
-  -ms-flex-item-align: auto;
-      align-self: auto;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 5px;
   border: 0;
   background-color: transparent;
   cursor: pointer;
@@ -3663,18 +3688,21 @@ h6,
 
 .hamburger span {
   display: block;
+  height: 2px;
+  background-color: #000000;
+  border-radius: 2px;
+}
+
+.hamburger span:nth-child(even) {
+  width: 16px;
+}
+
+.hamburger span:nth-child(odd) {
   width: 20px;
-  height: 3px;
-  background-color: #48545D;
 }
 
 .hamburger span + span {
-  margin-top: 4px;
-}
-
-.active.hamburger span,
-:hover.hamburger span {
-  background-color: #000000;
+  margin-top: 3px;
 }
 
 .opened.hamburger span {
@@ -3696,7 +3724,17 @@ h6,
   display: none;
 }
 
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 10;
+}
+
 header .container-fluid, header .container-xs, header .container-sm, header .container-md, header .container-lg {
+  min-height: 80px;
   border-bottom: 2px solid #12F99F;
 }
 
@@ -3709,9 +3747,25 @@ a.logo img {
   height: 36px;
 }
 
+.open-search, .hamburger {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .open-search, .hamburger {
+    display: none;
+  }
+}
+
 .member-block .icon-user {
-  padding: 10px;
+  padding: 5px;
   border: 0;
+}
+
+@media (min-width: 768px) {
+  .member-block .icon-user {
+    padding: 10px;
+  }
 }
 
 .member-block .icon-user::before, .member-block .icon-user::after {
@@ -3738,12 +3792,14 @@ a.logo img {
 }
 
 footer {
+  position: relative;
   padding: 48px 12px;
   color: #ffffff;
   font-size: 0.75rem;
   font-weight: 600;
   line-height: 1.5;
   background-color: #000000;
+  z-index: 1;
 }
 
 @media (min-width: 768px) {
@@ -3821,8 +3877,6 @@ footer .social-link a i {
 button,
 a {
   padding: 0;
-  -ms-flex-item-align: baseline;
-      align-self: baseline;
   background-color: transparent;
   border-radius: 0;
   -webkit-appearance: none;
@@ -3862,10 +3916,25 @@ a:focus {
   pointer-events: auto;
 }
 
+.open-search {
+  padding: 5px;
+  border: 0;
+}
+
+.open-search i {
+  display: block;
+}
+
 .form-search {
   display: none;
   position: relative;
   width: 300px;
+}
+
+@media (min-width: 768px) {
+  .form-search {
+    display: block;
+  }
 }
 
 .form-search input {
@@ -3894,27 +3963,33 @@ a:focus {
   font-size: .875rem;
 }
 
-section:not(.full-image-module) {
+article {
+  position: relative;
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+article section:not(.full-image-module) {
   padding-top: 60px;
 }
 
 @media (min-width: 1440px) {
-  section:not(.full-image-module) {
+  article section:not(.full-image-module) {
     padding-top: 100px;
   }
 }
 
-section:not(.full-image-module)::after {
+article section:not(.full-image-module)::after {
   margin-top: 60px;
 }
 
 @media (min-width: 1440px) {
-  section:not(.full-image-module)::after {
+  article section:not(.full-image-module)::after {
     margin-top: 100px;
   }
 }
 
-section::after {
+article section::after {
   content: "";
   display: block;
   width: 100%;
@@ -3925,13 +4000,13 @@ section::after {
 }
 
 @media (min-width: 1024px) {
-  section::after {
+  article section::after {
     max-width: 960px;
   }
 }
 
 @media (min-width: 1440px) {
-  section::after {
+  article section::after {
     max-width: 1240px;
   }
 }
@@ -4015,6 +4090,76 @@ section::after {
   .single-column .video-with-decoration {
     -webkit-transform: translateX(-2.5px);
             transform: translateX(-2.5px);
+  }
+}
+
+.opening-module {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 80px;
+  width: 100%;
+  color: #ffffff;
+  max-height: calc(100vh - 200px);
+  z-index: 1;
+}
+
+.opening-module .container-fluid, .opening-module .container-xs, .opening-module .container-sm, .opening-module .container-md, .opening-module .container-lg {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 18px 30px 26px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(48.96%, rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.9)));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 48.96%, rgba(0, 0, 0, 0.9) 100%);
+  z-index: 1;
+}
+
+@media (min-width: 1024px) {
+  .opening-module .container-fluid, .opening-module .container-xs, .opening-module .container-sm, .opening-module .container-md, .opening-module .container-lg {
+    padding: 60px 60px 50px;
+  }
+}
+
+.opening-module .ratio img {
+  display: none;
+}
+
+@media screen and (orientation: landscape) {
+  .opening-module .ratio img.landscape {
+    display: block;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .opening-module .ratio img.portrait {
+    display: block;
+  }
+}
+
+.opening-module .ratio::before {
+  padding-top: 185.50725%;
+}
+
+@media screen and (orientation: landscape) {
+  .opening-module .ratio::before {
+    padding-top: 56.25%;
+  }
+}
+
+.opening-module .icon-star {
+  color: #12F99F;
+  font-size: 2.125rem;
+  text-shadow: none;
+}
+
+@media (min-width: 1024px) {
+  .opening-module .icon-star {
+    font-size: 3.125rem;
   }
 }
 

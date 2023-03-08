@@ -2,7 +2,13 @@ $zoomin: 1.1428571429;
 $zoomout: .875;
 
 header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: $white;
+  z-index: 10;
   .container-fluid {
+    min-height: 80px;
     border-bottom: 2px solid $primary;
   }
 }
@@ -14,10 +20,20 @@ a.logo {
   }
 }
 
+.open-search, .hamburger {
+  display: block;
+  @include media-breakpoint-up(sm) {
+    display: none;
+  }
+}
+
 .member-block {
   .icon-user {
-    padding: 10px;
+    padding: 5px;
     border: 0;
+    @include media-breakpoint-up(sm) {
+      padding: 10px;
+    }
     &::before,
     &::after {
       @include beforeafter;
