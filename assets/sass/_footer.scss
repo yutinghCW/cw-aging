@@ -1,0 +1,55 @@
+footer {
+  padding: 48px 12px;
+  color: $white;
+  font-size: 0.75rem;
+  @include typo-weight;
+  line-height: 1.5;
+  background-color: $black;
+  @include media-breakpoint-up(sm) {
+    padding: 30px 30px 40px;
+  }
+  ul {
+    @include listreset;
+  }
+  a {
+    &:not(.social-line):not(.social-youtube):not(.social-facebook) {
+      color: currentColor;
+    }
+    &.social-line,
+    &.social-youtube,
+    &.social-facebook {
+      color: $primary;
+    }
+    &:hover {
+      &:not(.social-line):not(.social-youtube):not(.social-facebook) {
+        color: $primary;
+      }
+      &.social-line {
+        color: $line;
+      }
+      &.social-youtube {
+        color: $youtube;
+      }
+      &.social-facebook {
+        color: $facebook;
+      }
+    }
+  }
+  .container-fluid {
+    flex-direction: column;
+    @include media-breakpoint-up(sm) {
+      flex-direction: row-reverse;
+    }
+  }
+  .relative-link a {
+    text-decoration: underline;
+    text-underline-position: under;
+  }
+  .social-link a {
+    display: block;
+    i {
+      display: block;
+      font-size: 2.25rem;
+    }
+  }
+}
