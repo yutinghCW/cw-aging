@@ -393,10 +393,17 @@ body {
   font-family: 'Roboto', 'Noto Sans TC', sans-serif;
   letter-spacing: 0.04em;
   line-height: 1.4;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 
 body.opened {
   overflow: hidden;
+}
+
+body.loaded {
+  opacity: 1;
 }
 
 .serif {
@@ -3503,7 +3510,9 @@ h6,
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  padding: 5px;
+  width: 26px;
+  height: 27px;
+  padding: 5px 3px;
   border: 0;
   background-color: transparent;
   cursor: pointer;
@@ -3528,6 +3537,10 @@ h6,
   height: 2px;
   background-color: #000000;
   border-radius: 2px;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
 }
 
 .hamburger span:nth-child(even) {
@@ -3543,22 +3556,21 @@ h6,
 }
 
 .opened.hamburger span {
+  display: none;
   margin-top: 0;
   height: 2px;
 }
 
-.opened.hamburger span:first-child {
-  -webkit-transform: rotate(45deg) translate(7px, 7px);
-          transform: rotate(45deg) translate(7px, 7px);
+.opened.hamburger span:nth-child(1) {
+  display: block;
+  -webkit-transform: rotate(45deg) translate(4px, 0);
+          transform: rotate(45deg) translate(4px, 0);
 }
 
-.opened.hamburger span:last-child {
-  -webkit-transform: rotate(-45deg) translate(-5.5px, 5.5px);
-          transform: rotate(-45deg) translate(-5.5px, 5.5px);
-}
-
-.opened.hamburger span:nth-child(2) {
-  display: none;
+.opened.hamburger span:nth-child(3) {
+  display: block;
+  -webkit-transform: rotate(-45deg) translate(-9px, 12px);
+          transform: rotate(-45deg) translate(-9px, 12px);
 }
 
 header {
@@ -3572,7 +3584,12 @@ header {
 
 header .container-fluid, header .container-xs, header .container-sm, header .container-md, header .container-lg {
   min-height: 80px;
-  border-bottom: 2px solid #12F99F;
+}
+
+@media (min-width: 768px) {
+  header .container-fluid, header .container-xs, header .container-sm, header .container-md, header .container-lg {
+    border-bottom: 2px solid #12F99F;
+  }
 }
 
 a.logo {
@@ -3585,7 +3602,9 @@ a.logo img {
 }
 
 .open-search, .hamburger {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 @media (min-width: 768px) {
@@ -3708,6 +3727,7 @@ footer .social-link a i {
 button,
 a {
   padding: 0;
+  color: currentColor;
   background-color: transparent;
   border-radius: 0;
   -webkit-appearance: none;

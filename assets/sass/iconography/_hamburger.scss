@@ -11,7 +11,9 @@ $hamburger: (
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  padding: 5px;
+  width: map-get($hamburger, width1) + 6px;
+  height: map-get($hamburger, unit)*4 + map-get($hamburger, gap)*3 + 10px;
+  padding: 5px 3px;
   border: 0;
   background-color: transparent;
   cursor: pointer;
@@ -31,6 +33,8 @@ $hamburger: (
     height: map-get($hamburger, unit);
     background-color: $black;
     border-radius: map-get($hamburger, unit);
+    transform-origin: left;
+    transition: all .3s ease-out;
     &:nth-child(even) {
       width: map-get($hamburger, width2);
     }
@@ -42,16 +46,16 @@ $hamburger: (
     }
     @at-root {
       .opened#{&} {
+        display: none;
         margin-top: 0;
         height: 2px;
-        &:first-child {
-          transform: rotate(45deg) translate(7px, 7px);
+        &:nth-child(1) {
+          display: block;
+          transform: rotate(45deg) translate(4px, 0);
         }
-        &:last-child {
-          transform: rotate(-45deg) translate(-5.5px, 5.5px);
-        }
-        &:nth-child(2) {
-          display: none;
+        &:nth-child(3) {
+          display: block;
+          transform: rotate(-45deg) translate(-9px, 12px);
         }
       }
     }

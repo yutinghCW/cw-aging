@@ -9,7 +9,9 @@ header {
   z-index: 10;
   .container-fluid {
     min-height: 80px;
-    border-bottom: 2px solid $primary;
+    @include media-breakpoint-up(sm) {
+      border-bottom: 2px solid $primary;
+    }
   }
 }
 a.logo {
@@ -21,7 +23,7 @@ a.logo {
 }
 
 .open-search, .hamburger {
-  display: block;
+  display: flex;
   @include media-breakpoint-up(sm) {
     display: none;
   }

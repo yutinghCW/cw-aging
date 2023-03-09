@@ -1,4 +1,14 @@
 $(document).ready(() => {
+  setTimeout(() => {
+    $('body').addClass('loaded');
+  }, 200);
+
+  // 漢堡
+  $('.hamburger').click(function() {
+    $(this).toggleClass('opened');
+  });
+
+  // slick
   $('.slick-opening').slick({
     dots: false,
     arrows: false,
@@ -15,7 +25,7 @@ $(document).ready(() => {
 	  this.id = sliderIdName;
 	  $('.slick-gallery-text')[key].id = sliderNavIdName;
 	  const sliderId = `#${sliderIdName}`;
-	  const sliderNavId = `#${sliderNavIdName}`
+	  const sliderNavId = `#${sliderNavIdName}`;
     $(sliderId).slick({
       dots: true,
       arrows: false,
