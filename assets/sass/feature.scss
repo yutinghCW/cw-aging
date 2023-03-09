@@ -9,20 +9,21 @@
 
 @import "color";
 @import "typography";
-@import "ratio";
-@import "avatar";
-@import "sticker";
-@import "slick";
 
 @import "iconography/font";
 @import "iconography/hamburger";
 
-@import "header";
-@import "logo";
-@import "footer";
+@import "atom/header";
+@import "atom/logo";
+@import "atom/footer";
 
 @import "component/button";
 @import "component/search";
+
+@import "atom/ratio";
+@import "atom/avatar";
+@import "atom/sticker";
+@import "atom/slick";
 
 article {
   position: relative;
@@ -201,7 +202,7 @@ article {
 }
 
 .article-module {
-  @import "card";
+  @import "atom/card";
 }
 
 .full-image-module {
@@ -263,6 +264,18 @@ article {
       margin-right: 25px;
       padding: 25px 24px;
       z-index: 1;
+      &::before {
+        @include beforeafter($icon-star, block);
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: $primary;
+        font-family: $icomoon-font-family;
+        line-height: 1;
+        font-size: 4.375rem;
+        opacity: 0.3;
+        z-index: -1;
+      }
     }
   }
 }
